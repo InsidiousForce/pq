@@ -3,7 +3,7 @@ unit Main;
 
 {$UNDEF CHEATS}
 {$UNDEF LOGGING}
-{$DEFINE TURBO}
+{$UNDEF TURBO}
 
 interface
 
