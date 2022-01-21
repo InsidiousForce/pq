@@ -3,7 +3,7 @@ unit Main;
 
 {$UNDEF CHEATS}
 {$UNDEF LOGGING}
-{$UNDEF TURBO}
+{$DEFINE TURBO}
 
 interface
 
@@ -841,11 +841,17 @@ begin
     t := 0;
     for i := 0 to 5 do Inc(t,Square(GetI(Stats,i)));
     t := Random(t);
+    // High stats cause int overflow
     if t < 0 then i := Random(Stats.Items.Count)
     else begin
       i := -1;
       while t >= 0 do begin
         Inc(i);
+        if i >= Stats.Items.Count then begin
+          // This happens with high stats due to integer overflow
+          i := Random(Stats.Items.Count);
+          break;
+        end;
         Dec(t,Square(GetI(Stats,i)));
       end;
     end;
