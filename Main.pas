@@ -831,29 +831,28 @@ end;
 
 procedure TMainForm.WinStat;
 var
-  i,t: Integer;
-  function Square(x: Integer): Integer; begin Result := x * x; end;
+  i: Integer;
+  t: Int64;
+  function Square(x: Int64): Int64; begin Result := x * x; end;
+
+  function Random64(below: Int64): Int64;
+  begin
+    Int64Rec(Result).Hi := Random($7FFFFFFF);
+    Int64Rec(Result).Lo := Random($FFFFFFFF);
+    Result := Result mod below;
+  end;
 begin
   if Odds(1,2)
   then i := Random(Stats.Items.Count)
   else begin
-    // favor the best stat so it will tend to clump
+    // Favor the best stats so they will tend to clump
     t := 0;
-    for i := 0 to 5 do Inc(t,Square(GetI(Stats,i)));
-    t := Random(t);
-    // High stats cause int overflow
-    if t < 0 then i := Random(Stats.Items.Count)
-    else begin
-      i := -1;
-      while t >= 0 do begin
-        Inc(i);
-        if i >= Stats.Items.Count then begin
-          // This happens with high stats due to integer overflow
-          i := Random(Stats.Items.Count);
-          break;
-        end;
-        Dec(t,Square(GetI(Stats,i)));
-      end;
+    for i := 0 to 5 do Inc(t, Square(GetI(Stats,i)));
+    t := Random64(t);
+    i := -1;
+    while t >= 0 do begin
+      Inc(i);
+      Dec(t, Square(GetI(Stats,i)));
     end;
   end;
   Add(Stats, Stats.Items[i].Caption, 1);
@@ -1109,7 +1108,7 @@ begin
   WrLn( Format('  CHA%7d      MP Max%7d', [GetI(Stats,'CHA'), GetI(Stats,'MP Max')]));
   WrLn;
   WrLn( 'Equipment:');
-  for i := 1 to Equips.Items.Count-1 do
+  for i := 0 to Equips.Items.Count-1 do
     if Get(Equips,i) <> '' then
       WrLn( '  ' + LeftStr(Equips.Items[i].Caption + '            ', 12) + Get(Equips,i));
   WrLn;
@@ -1607,7 +1606,7 @@ begin
     Navigate(GetHostAddr + 'name=' + UrlEncode(Get(Traits,'Name')));
   end;
   if (ssCtrl in Shift) and (Key = ord('G')) then begin
-    SetGuild(InputBox('Progress Quest', 'Choose a guild.'#13#13'Make sure you undestand the guild rules before you join one. To learn more about guilds, visit http://progressquest.com/guilds.php', GetGuild));
+    SetGuild(InputBox('Progress Quest', 'Choose a guild.'#13#13'Make sure you understand the guild rules before you join one. To learn more about guilds, visit http://progressquest.com/guilds.php', GetGuild));
     Guildify;
   end;
 end;
