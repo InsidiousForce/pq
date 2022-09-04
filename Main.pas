@@ -835,13 +835,38 @@ var
   t: Int64;
   function Square(x: Int64): Int64; begin Result := x * x; end;
 
-  function Random64(below: Int64): Int64;
+  function Random64: Int64; overload;
   begin
-    Int64Rec(Result).Hi := Random($7FFFFFFF);
+    Int64Rec(Result).Hi := Random($3FFFFFFF);
     Int64Rec(Result).Lo := Random($FFFFFFFF);
-    Result := Result mod below;
   end;
+
+  function Random64(below: Int64): Int64; overload;
+  begin
+    Result := Random64 mod below;
+  end;
+
+{
+  procedure TestRandom;
+  var
+    i, b: Integer;
+    c: Integer;
+    v: Int64;
+  begin
+    for b := 0 to 63 do begin
+      c := 0;
+      for i := 1 to 1000 do begin
+        v := Random64($0fffffffffffffff);
+        if ((v shr b) and 1) = 1 then Inc(c);
+      end;
+      OutputDebugString(PChar(IntToStr(b) + ' ' + IntToStr(c) + '\n'));
+    end
+  end;
+}
+
 begin
+  // TestRandom;
+
   if Odds(1,2)
   then i := Random(Stats.Items.Count)
   else begin
