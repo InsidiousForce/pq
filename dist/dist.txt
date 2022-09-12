@@ -6,9 +6,17 @@ Reminder: How I publish a new version
 	$ zip pq6-MAJOR-MINOR pq.exe README.html license.txt
 	$ md5 pq6-MAJOR-MINOR.zip
 	$ shasum pq6-MAJOR-MINOR.zip
+	$ du -h pq6-MAJOR-MINOR.zip
 	$ git add pq6-MAJOR_MINOR.zip
 	$ git commit -am "new version!"
 	$ scp pq6-MAJOR-MINOR.zip progressquest.com:www/progressquest.com/dl/
 	$ ssh progressquest.com
-	$ nano www/progressquest.com/dl/index.php
-	[copypasta in the new version and checksums]
+	$ cd www/progressquest.com
+	$ nano dl.php
+	[copypasta in the new version and checksums and size]
+	$ nano releasenotes.php
+	[type in the changes]
+	$ cd dl
+	$ git add pq6-MAJOR-MINOR.zip
+	$ git commit -am "New version published!"
+	$ did Released PQ version 6-MAJOR-MINOR
