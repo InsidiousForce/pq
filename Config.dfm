@@ -32,7 +32,7 @@ object K: TK
     Top = 228
     Width = 70
     Height = 13
-    Caption = 'Defense Atrtrib'
+    Caption = 'Defense Attrib'
   end
   object Label4: TLabel
     Left = 140
@@ -60,7 +60,7 @@ object K: TK
     Top = 428
     Width = 40
     Height = 13
-    Caption = 'Speicals'
+    Caption = 'Specials'
   end
   object Label8: TLabel
     Left = 8
@@ -153,7 +153,7 @@ object K: TK
       'Seasick'
       'Gyp'
       'Shoelaces'
-      'Innoculate'
+      'Inoculate'
       'Cone of Annoyance'
       'Magnetic Orb'
       'Invisible Hands'
@@ -188,7 +188,7 @@ object K: TK
       'Animate Tunic'
       'Ursine Armor'
       'Holy Roller'
-      'Tonsilectomy'
+      'Tonsillectomy'
       'Curse Family'
       'Infinite Confusion')
     TabOrder = 0
@@ -545,7 +545,7 @@ object K: TK
       'Beholder|10|eyestalk'
       'Black Pudding|10|saliva'
       'Blink Dog|4|eyelid'
-      'Cub Scout|1|neckercheif'
+      'Cub Scout|1|neckerchief'
       'Girl Scout|2|cookie'
       'Boy Scout|3|merit badge'
       'Eagle Scout|4|merit badge'
@@ -583,7 +583,7 @@ object K: TK
       'Ice Devil|11|snow'
       'Lemure|3|blob'
       'Pit Fiend|13|seed'
-      'Anklyosaurus|9|tail'
+      'Ankylosaurus|9|tail'
       'Brontosaurus|30|brain'
       'Diplodocus|24|fin'
       'Elasmosaurus|15|neck'
@@ -594,9 +594,9 @@ object K: TK
       'Pentasaurus|12|head'
       'Stegosaurus|18|plate'
       'Triceratops|16|horn'
-      'Tyranosauraus Rex|18|forearm'
+      'Tyrannosaurus Rex|18|forearm'
       'Djinn|7|lamp'
-      'Doppleganger|4|face'
+      'Doppelganger|4|face'
       'Black Dragon|7|*'
       'Plaid Dragon|7|sporrin'
       'Blue Dragon|9|*'
@@ -665,7 +665,7 @@ object K: TK
       'Hippocampus|4|mane'
       'Hippogriff|3|egg'
       'Hobgoblin|1|patella'
-      'Homonculus|2|fluid'
+      'Homunculus|2|fluid'
       'Hydra|8|gyrum'
       'Imp|2|tail'
       'Invisible Stalker|8|*'

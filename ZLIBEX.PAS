@@ -18,7 +18,7 @@
 *                                                                            *
 *  acknowledgements                                                          *
 *    erik turner    Z*Stream routines                                        *
-*    david bennion  finding the nastly little endless loop quirk with the    *
+*    david bennion  finding the nasty little endless loop quirk with the     *
 *                     TZDecompressionStream.Read method                      *
 *    burak kalayci  informing me about the zlib 1.1.4 update                 *
 *****************************************************************************}
