@@ -13,9 +13,9 @@
 {*  BinaryData: Boolean - This setting specifies which type   }
 {*                        of data will taken from the web.    }
 {*                        If you set this property TRUE then  }
-{*                        component will determinee the size  }
-{*                        of files *before* getting them from }
-{*                        the web.                            }
+{*                        component will determine the size of}
+{*                        files *before* getting them from the}
+{*                        web.                                }
 {*                        If this property is FALSE then as we}
 {*                        do not knows the file size the      }
 {*                        OnProgress event will doesn't work. }
@@ -46,7 +46,7 @@
 { EVENTS:                                                     }
 {   OnDoneFile - Occurs when the file is downloaded           }
 {   OnDoneString - Occurs when the string is received         }
-{   OnError - Occurs when error happend                       }
+{   OnError - Occurs when error happens                       }
 {   OnProgress - Occurs at the receiving of the BINARY DATA   }
 {*************************************************************}
 { Please see demo program for more information.               }

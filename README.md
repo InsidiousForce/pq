@@ -24,9 +24,9 @@ thataway.
 (I didn't add this README file in PQ 6.0, but after that you can use
 this README to trace the checkin history using version control.)
 
-Subversion revsion numbers vs. versions:
+Subversion revision numbers vs. versions:
 
-* r321 v6.3 as I found it after a couple years of inactivity
+* r321 v6.3 as I found it after a couple of years of inactivity
 * r320 v6.2 probably as released, though I'm not totally sure
 * r318 v6.2 but probably a slightly older version
 * r317 v6.1
