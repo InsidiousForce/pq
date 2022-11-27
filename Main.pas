@@ -1566,6 +1566,13 @@ begin
   for i := 0 to ComponentCount-1 do
     m.ReadComponent(Components[i]);
   m.Free;
+  // Patch old misspellings found in save
+  with Spells do for i := 1 to Items.Count-1 do begin
+    if Items[i].Caption = 'Tonsilectomy' then
+      Items[i].Caption := 'Tonsillectomy';
+    if Items[i].Caption = 'Innoculate' then
+      Items[i].Caption := 'Inoculate';
+  end;
   {$IFDEF LOGGING}
   Log('Loaded game: ' + name);
   {$ENDIF}
