@@ -151,7 +151,6 @@ object K: TK
       'Good Move'
       'Sadness'
       'Seasick'
-      'Gyp'
       'Shoelaces'
       'Inoculate'
       'Cone of Annoyance'
